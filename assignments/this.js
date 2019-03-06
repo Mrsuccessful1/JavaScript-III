@@ -14,12 +14,12 @@ function Season(argument){
     console.log(this);
     return argument;
 } 
-Season(Winter);
+Season('Winter');
 
 // Principle 2
 const myObj = {
-    greeting = 'What\'s Up',
-    sayHello = function(name) {
+    greeting: 'What\'s Up',
+    sayHello: function(name) {
       console.log(`${this.greeting} my name is ${name}`);
       console.log(this);
     }
@@ -28,8 +28,8 @@ const myObj = {
 
 // Principle 3
 function Homebody(does){
-    this.does = 'stay inside',
-    this.watches = 'Soap Opera\s'
+    this.does = does,
+    this.watches = 'television',
     this.speak = function(){
         console.log (`I ${this.does} and watch ${this.watches} all day!`);
         console.log(this);
@@ -38,5 +38,20 @@ function Homebody(does){
 const Cheryl = new Homebody('lounge around')
 
 // Principle 4
+
+const teeShirt = {
+    size : "L",
+    type : "collar",
+    color : "blue",
+}
+
+function advertise(){
+    return `This ${this.size} ${this.color} ${this.type}shirt could be all yours for $9.95`
+}
+
+console.log(advertise.call(teeShirt));
+
+
+
 
 // code example for Explicit Binding
